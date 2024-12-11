@@ -6,8 +6,6 @@ export default <Config>{
   theme: {
     extend: {},
   },
-  /* corePlugins: {
-    preflight: false,
-  },*/
   plugins: [],
+  important: true,
 };

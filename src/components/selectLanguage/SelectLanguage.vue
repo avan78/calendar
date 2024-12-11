@@ -13,14 +13,13 @@
 </script>
 
 <template>
-  <p>
+  <p class="head">
     {{ t('calendar.chooseLanguage') }}
     <select
       title="langSelect"
       :value="locale"
       @change="changeLang"
-      class="m-1 ml-3"
-      style="margin-left: 0.5rem; padding: 0.3rem"
+      class="select-button"
     >
       <option value="cs">{{ t('calendar.czech') }}</option>
       <option value="en">{{ t('calendar.english') }}</option>

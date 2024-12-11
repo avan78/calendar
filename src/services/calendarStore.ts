@@ -34,7 +34,6 @@ export const useCalendarStore = defineStore('calendarStore', () => {
     } else {
       dateRange.value = [null, null];
     }
-
     dateRangeSource.value = source;
   };
 

@@ -82,7 +82,7 @@
       if (calendarStore.dateRangeSource === 'favourites') {
         state.dateRange = newDateRange.map((date) =>
           date ? new Date(date) : null
-        ) as [Date | null, Date | null];
+        ) as CalendarData['dateRange'];
       }
     },
     { immediate: true }
@@ -90,7 +90,7 @@
 </script>
 
 <template>
-  <div class="flex flex-wrap gap-4 p-2 flex-col md:flex-row">
+  <div class="datepicker-component">
     <DatePicker
       v-model="state.dateRange"
       selectionMode="range"
@@ -103,18 +103,3 @@
     />
   </div>
 </template>
-
-<style scoped>
-  .flex {
-    display: flex;
-  }
-  .flex-wrap {
-    flex-wrap: wrap;
-  }
-  .gap-4 {
-    gap: 1rem;
-  }
-  .flex-1 {
-    flex: 1 1 0;
-  }
-</style>

@@ -53,7 +53,8 @@ const messages = {
       clear: 'Vymazat',
       czech: 'česky',
       english: 'english',
-      chooseLanguage: 'JAZYK',
+      chooseLanguage: 'Jazyk',
+      favourite: 'Oblíbené termíny',
     },
     buttons: {
       lastMinute: 'last minute',
@@ -115,9 +116,10 @@ const messages = {
       },
       today: 'Today',
       clear: 'Clear',
-      chooseLanguage: 'LANGUAGE',
+      chooseLanguage: 'Language',
       czech: 'česky',
       english: 'english',
+      favourite: 'Popular schedules',
     },
     buttons: {
       lastMinute: 'Last minute',

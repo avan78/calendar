@@ -29,10 +29,10 @@
           ...favourite,
           title: t(favourite.text),
           dateRange: {
-            startDate: new Date(favourite.dateRange.startDate),
-            endDate: new Date(favourite.dateRange.endDate),
+            startDate: favourite.dateRange.startDate,
+            endDate: favourite.dateRange.endDate,
           },
-          minDate: new Date(favourite.minDate),
+          minDate: favourite.minDate,
         }));
       })
       .catch((err: unknown) => {
@@ -70,8 +70,10 @@
     (newDateRange: CalendarData['dateRange']) => {
       const colorButton = state.buttons.findIndex((button) => {
         return (
-          button.dateRange.startDate.getTime() === newDateRange[0]?.getTime() &&
-          button.dateRange.endDate?.getTime() === newDateRange[1]?.getTime()
+          new Date(button.dateRange.startDate).getTime() ===
+            newDateRange[0]?.getTime() &&
+          new Date(button.dateRange.endDate)?.getTime() ===
+            newDateRange[1]?.getTime()
         );
       });
       active.value = colorButton !== -1 ? colorButton : null;
@@ -81,19 +83,8 @@
 </script>
 
 <template>
-  <div
-    class="flex items-left justify-center p-6"
-    style="
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-content: space-around;
-      justify-content: start;
-      gap: 0.5rem;
-      margin: 1rem;
-      max-width: 315px;
-    "
-  >
+  <p class="favourites-text">{{ t('calendar.favourite') }}</p>
+  <div class="favourites">
     <button
       v-for="(button, index) in state.buttons"
       :title="button.title"

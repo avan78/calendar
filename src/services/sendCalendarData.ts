@@ -1,17 +1,9 @@
 import axios, { AxiosResponse } from 'axios';
 import { CalendarData } from './types.ts';
-import { useCalendarStore } from './calendarStore.ts';
 
-export const sendCalendarData = (): Promise<any> => {
-  const calendarStore = useCalendarStore();
-  const dataForSave: CalendarData = {
-    maxNight: calendarStore.maxNight,
-    minStartDate: calendarStore.minStartDate,
-    language: calendarStore.language,
-    dateRange: calendarStore.dateRange,
-  };
+export const sendCalendarData = (data: CalendarData): Promise<any> => {
   return axios
-    .post('/api/calendar', dataForSave)
+    .post('/api/calendar', data)
     .then((res: AxiosResponse<any>) => {
       // console.log('res', res);
       return res.data;

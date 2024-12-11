@@ -14,6 +14,7 @@ createApp(App)
   .use(PrimeVue, {
     theme: {
       preset: Aura,
+      cssLayer: true,
       locale: i18n.global.messages[i18n.global.locale.value]?.calendar?.picker,
     },
   })
